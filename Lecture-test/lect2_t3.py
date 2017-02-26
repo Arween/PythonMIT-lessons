@@ -4,23 +4,26 @@ interestRate = float(raw_input("Enter the annual credit card interest rate as a 
 
 monthlyInterestRate = interestRate/12
 balance = outstandingBalance
-monthlyPayment = 0
 lowerBound = balance / 12.0
 upperBound = (balance * (1 + (interestRate / 12.0)) ** 12.0) / 12.0
-epsilon = 0.02
 
 
-while abs(balance) > epsilon:
-    monthlyPayment = (upperBound + lowerBound) / 2
-    balance = outstandingBalance
-    for i in range(0, 12):
-        balance = balance - monthlyPayment + ((balance - monthlyPayment) * monthlyInterestRate)
-    if balance > epsilon:
+while balance > 0:
+    monthlyPayment = (upperBound + lowerBound) / 2.0
+    for months in range(1,13):
+        balance = round((balance * (1 + monthlyInterestRate)-monthlyPayment),2)
+        if balance <= 0:
+            break
+    if balance == 0.0:
+        outstandingBalance = balance
+    elif balance > 0.0:
+        balance = outstandingBalance
         lowerBound = monthlyPayment
     else:
+        balance = outstandingBalance
         upperBound = monthlyPayment
-
 
 print "RESULT";
 print "Monthly payment to pay off debt in 1 year: ", round(monthlyPayment, 2)
+print "Number of months needed: ", months
 print "Balance: ", round(balance, 2)
