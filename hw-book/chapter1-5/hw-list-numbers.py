@@ -18,5 +18,5 @@ print sum(list_numbers)
 # for i in range(1,10):
 #     print i**3
 
-list_3 = [value**3 for value in range(1,11)]
+list_3 = [value**3 for value in range(1, 11)]
 print list_3

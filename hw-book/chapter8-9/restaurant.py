@@ -24,8 +24,8 @@ class Restaurant():
 
     def increment_number_served(self):
 
-        self.increment_number_served = input("\nIncrement number served: ")
-        self.number_served += self.increment_number_served
+        increment_number_served = input("\nIncrement number served: ")
+        self.number_served += increment_number_served
 
        # if self.number_served == 'q':
         #    print ("Number served: " + str(self.number_served))
@@ -41,34 +41,34 @@ favorite_restaurant.describe_restaurant()
 favorite_restaurant.open_restaurant()
 
 # change number_served
-#print(my_restaurant.number_served)
-#my_restaurant.number_served = 6
-#print (my_restaurant.number_served)
+# print(my_restaurant.number_served)
+# my_restaurant.number_served = 6
+# print (my_restaurant.number_served)
 
 # change number_served (method)
 
-#favorite_restaurant.set_number_served()
-#favorite_restaurant.describe_restaurant()
-#favorite_restaurant.increment_number_served()
-#favorite_restaurant.describe_restaurant()
+# favorite_restaurant.set_number_served()
+# favorite_restaurant.describe_restaurant()
+# favorite_restaurant.increment_number_served()
+# favorite_restaurant.describe_restaurant()
 
 
-class IceCreamStand(Restaurant, object):
-    def __init__(self, restaurant_name, cuisine_type, number_served=0):
-
-        super(IceCreamStand, self).__init__(self, restaurant_name, cuisine_type, number_served=0)
-
-            self.flavors = input("\nFlavors: ")
-
-            list_flavors.append(self.flavors)
-
-
-            #self.flavors = 'chocolate'
-
-            def describe_ice_cream(self):
-
-               print ("Flavors: " + list_flavors)
-
-my_ice = IceCreamStand('iCE','USA')
-my_ice.describe_restaurant()
-my_ice.describe_ice_cream()
+# class IceCreamStand(Restaurant, object):
+#     def __init__(self, restaurant_name, cuisine_type, number_served=0):
+#
+#         super(IceCreamStand, self).__init__(self, restaurant_name, cuisine_type, number_served=0)
+#
+#             self.flavors = input("\nFlavors: ")
+#
+#             list_flavors.append(self.flavors)
+#
+#
+#             #self.flavors = 'chocolate'
+#
+#         def describe_ice_cream(self):
+#
+#             print ("Flavors: " + list_flavors)
+#
+# my_ice = IceCreamStand('iCE','USA')
+# my_ice.describe_restaurant()
+# my_ice.describe_ice_cream()

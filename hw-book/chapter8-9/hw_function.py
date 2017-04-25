@@ -6,3 +6,7 @@ def build_car(manufacturer, model, **addition):
         car[key] = value
     return car
 
+x = 0.1 + 0.1 + 0.1 + 0.1 + 0.1
+if 0.5 == x:
+    print ('rrrr')
+print (x)
