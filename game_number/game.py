@@ -27,6 +27,7 @@ def easy_level(numb_comp):
     number = int(input("Your number: "))
     if number == numb_comp:
         print("This game is yours!")
+        play_game()
     else:
         print("Try again!")
         easy_level(numb_comp)
@@ -46,10 +47,12 @@ def middle_level(numb_comp):
         else:
             # print("ne ok")
             search_region(numb_comp, number)
+            search_side(numb_comp, number)
         n += 1
 
     if flag == True:
         print("This game is yours!")
+        play_game()
     else:
         print("You lost this round, detective.")
 
@@ -72,10 +75,11 @@ def hard_level(numb_comp):
 
     if flag:
         print("This game is yours!")
+        play_game()
     else:
         print("You lost this round, detective.")
 
- # сhecks closely or far
+# сhecks closely or far
 
 def search_region(numb_comp, number):
 
@@ -92,6 +96,16 @@ def search_region(numb_comp, number):
         print("closely!!")
     else:
         print("far!!")
+
+# сhecks "To the left" or "To the right"
+
+def search_side(numb_comp, number):
+    if number > numb_comp:
+        print("To the left")
+    else:
+        print("To the right")
+
+# compile promts (even/odd, %3, %5, prime number)
 
 def forms_prompts(numb_comp):
     promts = 'Your promts: '
@@ -117,9 +131,17 @@ def forms_prompts(numb_comp):
 
     print(promts)
 
+# function "play again"
+
+def play_game():
+   print("Play again: yes or no")
+   play = input("Play: ")
+   if play == 'yes':
+      selection_level()
+   elif play == 'no':
+       print("Poki poki")
+   else:
+      print("Selected: yes or no!!")
+      play_game()
 
 selection_level()
-
-
-
-
