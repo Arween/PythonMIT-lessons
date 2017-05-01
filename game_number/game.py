@@ -2,23 +2,29 @@ import random
 
 def selection_level():
     print("Select difficulty level: easy, middle, hard")
-    level = input("Level: ")
+    level = input("Level: ").lower()
     # if selected - easy
     if level == 'easy':
         numb_comp = random.randint(1, 10)
         # print(numb_comp)
+        print("Numbers: 1-10")
         easy_level(numb_comp)
 
-    if level == 'middle':
+    elif level == 'middle':
         numb_comp = random.randint(1, 30)
         # print(numb_comp)
+        print("Numbers: 1-30")
         middle_level(numb_comp)
 
-    if level == 'hard':
+    elif level == 'hard':
         numb_comp = random.randint(1, 100)
         # print(numb_comp)
+        print("Numbers: 1-100")
         forms_prompts(numb_comp)
         hard_level(numb_comp)
+    else:
+        print("You've already lost,... Only: easy, middle, hard.")
+        selection_level()
 
 # function - if selected - easy
 
@@ -27,10 +33,10 @@ def easy_level(numb_comp):
     number = int(input("Your number: "))
     if number == numb_comp:
         print("This game is yours!")
-        play_game()
     else:
         print("Try again!")
         easy_level(numb_comp)
+    play_game()
 
 # function - if selected - middle
 
@@ -52,9 +58,10 @@ def middle_level(numb_comp):
 
     if flag == True:
         print("This game is yours!")
-        play_game()
     else:
         print("You lost this round, detective.")
+        print('Number of computer:' + str(numb_comp))
+    play_game()
 
 # function - if selected - hard
 
@@ -75,9 +82,10 @@ def hard_level(numb_comp):
 
     if flag:
         print("This game is yours!")
-        play_game()
     else:
-        print("You lost this round, detective.")
+        print("You failed, you failed, you failed, - you failed, you failed, you fa...")
+        print('Number of computer:' + str(numb_comp))
+    play_game()
 
 # сhecks closely or far
 
@@ -93,9 +101,9 @@ def search_region(numb_comp, number):
         else:
             flag = False
     if flag == True:
-        print("closely!!")
+        print("It means the Hellhound - it's close.")
     else:
-        print("far!!")
+        print("The jedi code often prevents us from going far enough to achieve victory.")
 
 # сhecks "To the left" or "To the right"
 
@@ -135,7 +143,7 @@ def forms_prompts(numb_comp):
 
 def play_game():
    print("Play again: yes or no")
-   play = input("Play: ")
+   play = input("Play: ").lower()
    if play == 'yes':
       selection_level()
    elif play == 'no':
